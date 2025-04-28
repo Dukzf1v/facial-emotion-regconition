@@ -1,4 +1,3 @@
-import torch
 import torch.nn as nn
 
 class ResidualBlock(nn.Module):
@@ -51,20 +50,16 @@ class ResNet(nn.Module):
         self.conv5 = self.create_layer(residual_block, 256, 512, n_blocks_lst[3], 2)
         self.avgpool = nn.AdaptiveAvgPool2d(1)
         self.flatten = nn.Flatten()
-        self.fc1 = nn.Linear(512, n_classes)
-        self.dropout = nn.Dropout(p=0.5)
+        self.fc = nn.Linear(512, n_classes)
 
     def create_layer(self, residual_block, in_channels, out_channels, n_blocks, stride):
         blocks = []
         first_block = residual_block(in_channels, out_channels, stride)
         blocks.append(first_block)
-
         for idx in range(1, n_blocks):
             block = residual_block(out_channels, out_channels, stride=1)
             blocks.append(block)
-
         block_sequential = nn.Sequential(*blocks)
-
         return block_sequential
 
 
@@ -79,7 +74,5 @@ class ResNet(nn.Module):
         x = self.conv5(x)
         x = self.avgpool(x)
         x = self.flatten(x)
-        x = self.fc1(x)
-        x = self.dropout(x)
-
+        x = self.fc(x)
         return x

@@ -7,6 +7,8 @@ import cv2
 import io
 from resnet import ResNet, ResidualBlock
 from torchvision import transforms
+import os
+st.write("Current working directory:", os.getcwd())
 
 device_name = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = torch.device(device_name)
@@ -17,16 +19,16 @@ model = ResNet(
     n_classes=7
 ).to(device)
 
-model.load_state_dict(torch.load(r"D:\StudyPath\GR1\Facial-Emotion-Regconition\model\best_model.pth", map_location=device))
+model.load_state_dict(torch.load(r"..\model\best_model_resnet18.pth", map_location=device))
 model.eval()
 
 classes = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 
-face_cascade = cv2.CascadeClassifier('D:\\StudyPath\\GR1\\Facial-Emotion-Regconition\\src\\haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
 
 transform = transforms.Compose([
     transforms.Grayscale(num_output_channels=1), 
-    transforms.Resize((224, 224)),
+    transforms.Resize((48, 48)),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485], std=[0.229]),  
 ])

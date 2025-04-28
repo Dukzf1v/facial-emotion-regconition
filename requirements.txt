@@ -1,7 +1,9 @@
 torch
 streamlit
+torchvision
 python-opencv
 Pillow
 numpy
 matplotlib
 scikit-learn
+mtcnn

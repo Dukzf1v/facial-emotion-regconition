@@ -2,7 +2,7 @@ import cv2
 import torch
 import numpy as np
 import torch.nn.functional as F
-from torchvision import models, transforms
+from torchvision import transforms
 from PIL import Image
 from resnet import ResNet, ResidualBlock
 
@@ -15,17 +15,17 @@ model = ResNet(
     n_classes=7
 ).to(device)
 
-model.load_state_dict(torch.load(r"D:\StudyPath\GR1\Facial-Emotion-Regconition\model\best_model.pth", map_location=device))
+face_cascade = cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
+
+model.load_state_dict(torch.load(r"..\model\best_model_resnet18.pth", map_location=device))
 model.eval()
 
 transform = transforms.Compose([
-    transforms.Grayscale(num_output_channels=1), 
-    transforms.Resize((224, 224)),
-    transforms.ToTensor(),
-    transforms.Normalize(mean=[0.485], std=[0.229]),  
+    transforms.Grayscale(num_output_channels=1),
+    transforms.Resize((48, 48)),          
+    transforms.ToTensor(),                
+    transforms.Normalize([0.456], [0.224])   
 ])
-
-face_cascade = cv2.CascadeClassifier('D:\\StudyPath\\GR1\\Facial-Emotion-Regconition\\src\\haarcascade_frontalface_default.xml')
 
 emotion_labels = ['Angry', 'Disgust', 'Fear', 'Happy', 'Neutral', 'Sad', 'Surprise']
 
@@ -36,7 +36,8 @@ while True:
     if not ret:
         print("Failed to grab frame")
         break
-    
+    frame = cv2.flip(frame, 1)  
+
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
     faces = face_cascade.detectMultiScale(gray, 1.3, 5)
