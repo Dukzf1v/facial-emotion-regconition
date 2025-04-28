@@ -19,7 +19,8 @@ model = ResNet(
     n_classes=7
 ).to(device)
 
-model.load_state_dict(torch.load(r"/home/adminuser/venv/model/best_model_resnet18.pth", map_location=device))
+model.load_state_dict(torch.load(r"../model/best_model_resnet18.pth", map_location=device))
+
 model.eval()
 
 classes = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
