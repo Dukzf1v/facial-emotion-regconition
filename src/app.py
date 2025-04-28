@@ -7,8 +7,6 @@ import cv2
 import io
 from resnet import ResNet, ResidualBlock
 from torchvision import transforms
-import os
-st.write("Current working directory:", os.getcwd())
 
 device_name = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = torch.device(device_name)
