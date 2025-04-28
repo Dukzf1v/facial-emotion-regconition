@@ -19,7 +19,7 @@ model = ResNet(
     n_classes=7
 ).to(device)
 
-model.load_state_dict(torch.load(r"../model/best_model_resnet18.pth", map_location=device))
+model.load_state_dict(torch.load(r"/mount/src/fer/model/best_model_resnet18.pth", map_location=device))
 
 model.eval()
 
