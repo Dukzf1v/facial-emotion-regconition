@@ -25,7 +25,7 @@ model.eval()
 
 classes = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 
-face_cascade = cv2.CascadeClassifier(r'haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(r'/mount/src/fer/src/haarcascade_frontalface_default.xml')
 
 transform = transforms.Compose([
     transforms.Grayscale(num_output_channels=1), 
