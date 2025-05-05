@@ -67,6 +67,8 @@ if uploaded_file is not None:
 
             image_with_boxes = Image.fromarray(image_np)
             st.image(image_with_boxes, caption='Processed Image with Emotion and Bounding Box', use_container_width=True)
+            st.write(f"Emotion: {predicted_emotion}")
 
         else:
             st.write("No faces detected in the image.")
+    
