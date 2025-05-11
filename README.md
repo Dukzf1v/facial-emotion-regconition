@@ -52,14 +52,16 @@ This model is trained using the **FER2013** dataset, which is a publicly availab
 
 ### **Model Performance**:
 - **Train/Validation Loss/Accuracy**:
-  ![Train/Validation Loss/Accuracy](https://github.com/user-attachments/assets/0173cd12-1fdc-46ff-a631-9ae54321952d)
+  
+  <img src="https://github.com/user-attachments/assets/0173cd12-1fdc-46ff-a631-9ae54321952d" width="300" style="display:inline-block; margin-right:10px;">
 
 - **Precision, Recall, F1**:
-  ![Precision, Recall, F1](https://github.com/user-attachments/assets/bcb8174d-b6d7-4981-913d-8079ceb753ce)
+  
+  <img src="https://github.com/user-attachments/assets/bcb8174d-b6d7-4981-913d-8079ceb753ce" width="300" style="display:inline-block; margin-right:10px;">
 
 - **Confusion Matrix**:
-  ![Confusion Matrix](https://github.com/user-attachments/assets/d1df6ebb-8750-46d6-b7f2-de657b4c0a8d)
-
+  
+  <img src="https://github.com/user-attachments/assets/d1df6ebb-8750-46d6-b7f2-de657b4c0a8d" width="300" style="display:inline-block;">
 ---
 
 ## **Results**:
