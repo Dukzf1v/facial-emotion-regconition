@@ -68,6 +68,9 @@ This model is trained using the **FER2013** dataset, which is a publicly availab
 
 ## **Results**:
 - **Output Image**: [View output images here](https://github.com/Dukzf1v/facial-emotion-regconition/tree/6912a5a4d5e2757a6bffa5d5b8907a5e29d7aa25/output%20image)
+---
+
+<img src="https://github.com/Dukzf1v/facial-emotion-regconition/blob/c97e7c4b812221984870af9305e15e99e6251085/output%20image/demo.gif" width="300" style="display:inline-block; margin-right:10px;">
 
 ---
 
