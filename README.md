@@ -51,6 +51,8 @@ This model is trained using the **FER2013** dataset, which is a publicly availab
   - Patience: 8
 
 ### **Model Performance**:
+- **Val accuracy:**  0.6569363358354184 / **Test accuracy:**  0.6555295689943201
+  
 - **Train/Validation Loss/Accuracy**:
   
   <img src="https://github.com/user-attachments/assets/0173cd12-1fdc-46ff-a631-9ae54321952d" width="300" style="display:inline-block; margin-right:10px;">
