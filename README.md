@@ -1,4 +1,4 @@
-# **Facial Emotion Recognition (FER)**
+# **Facial Emotion Recognition (FER) using ResNet18**
 
 ## **Overview**
 This project uses a **ResNet-based deep learning model** for **Facial Emotion Recognition**. The system detects faces using **MTCNN**, crops them, and then classifies the emotions from the faces into 7 categories: **Anger**, **Disgust**, **Fear**, **Happy**, **Neutral**, **Sad**, and **Surprise**.
@@ -6,34 +6,51 @@ This project uses a **ResNet-based deep learning model** for **Facial Emotion Re
 ## **Installation**
 
 ### Prerequisites:
-- PyTorch, OpenCV, scikit-learn, PIL, numpy, matplotlib
+
+Clone repository:
+
+```bash
+git clone https://github.com/Dukzf1v/facial-emotion-regconition.git
+```
 
 Install dependencies:
 
 ```bash
-pip install torch torchvision opencv-python scikit-learn Pillow matplotlib tqdm
+pip install -r requirements.txt
 ```
 
-- Run control.py to using real-time model 
-
+- Run `control.py` to use the real-time model:
+  ```bash
+  python -u control.py
+  ```
+- Run `app.py` to use streamlit web
+  ```bash
+  streamlit run app.py
+  ```
 ## Dataset: FER2013
 
 ## Model: 
-- ResNet18:
-  ![image](https://github.com/user-attachments/assets/b91fbc28-40e0-4225-b5ad-6fa9d52a29d3)
+* Hyperparameters:
+  - Batch Size: 32
+  - Optimizer: + Learning rate: 0.001
+               + Momentum: 0.9
+               + Weight_decay: 0.0001
+  - Number of epochs: 55
+  - Early Stop: + Patience: 8
+* Train/Val Loss/Accuracy:
+  ![image](https://github.com/user-attachments/assets/0173cd12-1fdc-46ff-a631-9ae54321952d)
 
-- ResNet50:
-  ![image](https://github.com/user-attachments/assets/80cdb910-7a9a-4e91-b9be-ec961d4b32f1)
+* Precision, Recall, F1:
+  ![image](https://github.com/user-attachments/assets/bcb8174d-b6d7-4981-913d-8079ceb753ce)
 
-## Streamlit: https://1convitxoera2caicanh.streamlit.app/
+* Confusion Matrix:
+  ![image](https://github.com/user-attachments/assets/d1df6ebb-8750-46d6-b7f2-de657b4c0a8d)
 
 ## Result:
+- Output image: https://github.com/Dukzf1v/facial-emotion-regconition/tree/6912a5a4d5e2757a6bffa5d5b8907a5e29d7aa25/output%20image
+<img src="https://github.com/user-attachments/assets/706cc52b-202c-4f99-ac9a-a260db88e88f" width="200" style="display:inline-block; margin-right:10px;">
+<img src="https://github.com/user-attachments/assets/0633c47c-7988-4724-9237-c772a694c613" width="200" style="display:inline-block;">
 
-![image](https://github.com/user-attachments/assets/12f395dc-092e-415d-ac5d-e6d4183d14d0)
-
-![image](https://github.com/user-attachments/assets/de31cdf3-14f1-4acc-90d8-69e33a303d86)
-
-![image](https://github.com/user-attachments/assets/4b1a1276-6046-4d19-9a13-fee3043744e4)
 
 
 
