@@ -8,6 +8,8 @@ import cv2
 import io
 from torchvision import transforms, models
 from torchvision.models.resnet import ResNet18_Weights
+import os
+st.write(os.getcwd())
 
 device_name = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = torch.device(device_name)
