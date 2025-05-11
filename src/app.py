@@ -61,6 +61,9 @@ if uploaded_file is not None:
         faces = face_cascade.detectMultiScale(gray, 1.3, 5)
 
         if len(faces) > 0:
+            all_probabilities = []
+            all_emotions = []
+
             for (x, y, w, h) in faces:
                 cv2.rectangle(image_np, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
@@ -75,6 +78,8 @@ if uploaded_file is not None:
                     predicted_emotion = classes[predicted_class.item()] 
 
                     probabilities = probabilities.cpu().numpy().flatten() 
+                    all_probabilities.append(probabilities)
+                    all_emotions.append(predicted_emotion)
 
                 cv2.putText(image_np, f'{predicted_emotion}: {probabilities[predicted_class.item()]*100:.2f}%', 
                             (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
@@ -82,12 +87,16 @@ if uploaded_file is not None:
             image_with_boxes = Image.fromarray(image_np)
             st.image(image_with_boxes, caption='Processed Image with Emotion and Bounding Box', use_container_width=True)
 
-            data = {
-                'Emotion': classes,
-                'Probability': [f'{prob:.2f}%' for prob in probabilities]
-            }
-            df = pd.DataFrame(data)
+            probabilities_df = []
 
-            st.write("Class Probabilities:", df)
+            for i, emotion in enumerate(all_emotions):
+                data = {
+                    'Emotion': emotion,
+                    'Probabilities': [f'{prob*100:.2f}%' for prob in all_probabilities[i]]
+                }
+                probabilities_df.append(data)
+
+            result_df = pd.DataFrame(probabilities_df)
+            st.write("Class Probabilities for Detected Faces:", result_df)
         else:
             st.write("No faces detected in the image.")
