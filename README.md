@@ -67,6 +67,8 @@ This model is trained using the **FER2013** dataset, which is a publicly availab
 ---
 
 ## **Results**:
+- Linh streamlit: https://1convitxoera2caicanh.streamlit.app/
+---
 - **Output**: [View output here](https://github.com/Dukzf1v/facial-emotion-regconition/tree/6912a5a4d5e2757a6bffa5d5b8907a5e29d7aa25/output%20image)
 ---
 
