@@ -8,8 +8,6 @@ import cv2
 import io
 from torchvision import transforms, models
 from torchvision.models.resnet import ResNet18_Weights
-import os
-st.write(os.getcwd())
 
 device_name = 'cuda' if torch.cuda.is_available() else 'cpu'
 device = torch.device(device_name)
@@ -27,13 +25,13 @@ model.fc = nn.Sequential(
     nn.Linear(1024, 7)
 )
 model.to(device)
-model.load_state_dict(torch.load(r"D:\StudyPath\GR1\Facial-Emotion-Regconition\model\best_model.pth", map_location=device))
+model.load_state_dict(torch.load(r"/mount/src/facial-emotion-regconition\model\best_model.pth", map_location=device))
 
 model.eval()
 
 classes = ['angry', 'disgust', 'fear', 'happy', 'neutral', 'sad', 'surprise']
 
-face_cascade = cv2.CascadeClassifier(r'D:\StudyPath\GR1\Facial-Emotion-Regconition\src\haarcascade_frontalface_default.xml')
+face_cascade = cv2.CascadeClassifier(r'/mount/src/facial-emotion-regconition\src\haarcascade_frontalface_default.xml')
 
 transform = transforms.Compose([
     transforms.Grayscale(num_output_channels=3),  
