@@ -51,7 +51,7 @@ This model is trained using the **FER2013** dataset, which is a publicly availab
   - CosineAnnealingLR
 
 ### **Model Performance**:
-- **Val accuracy:**  0.6569363358354184
+- **Accuracy:**  0.677231025854879
   
 - **Train/Validation Loss/Accuracy**:
   
@@ -59,6 +59,8 @@ This model is trained using the **FER2013** dataset, which is a publicly availab
 
 ### **Evaluation**:
 #### **Fer2013 Test**:
+- **Accuracy:**  0.6717340461075844
+  
 - **Precision, Recall, F1**:
 
   <img src="https://github.com/user-attachments/assets/f345bde3-1f99-44aa-9b08-a2c9a194e145" width="300" style="display:inline-block; margin-right:10px;">
@@ -68,6 +70,8 @@ This model is trained using the **FER2013** dataset, which is a publicly availab
   <img src="https://github.com/user-attachments/assets/41ed1cce-f2d5-4467-b6b3-39b52ce7526d" width="300" style="display:inline-block;">
 
 #### **KDEF**:
+- **Accuracy:**  0.6086065573770492
+  
 - **Precision, Recall, F1**:
 
   <img src="https://github.com/user-attachments/assets/81e27d1b-669e-4d30-a041-5600899df779" width="300" style="display:inline-block; margin-right:10px;">
@@ -77,6 +81,8 @@ This model is trained using the **FER2013** dataset, which is a publicly availab
   <img src="https://github.com/user-attachments/assets/4317b59f-ca94-403a-b7bf-5f08ad0032b4" width="300" style="display:inline-block;">
   
 #### **Raf-db**:
+- **Accuracy:**  0.6682824826537401
+  
 - **Precision, Recall, F1**:
 
   <img src="https://github.com/user-attachments/assets/2b85eede-d3c4-4715-a2e4-67b33c9caa31" width="300" style="display:inline-block; margin-right:10px;">
